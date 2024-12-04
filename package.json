@@ -23,7 +23,7 @@
     "keybindings": [
       {
         "command": "nocomments.removeAllComments",
-        "key": "ctrl+x",
+        "key": "ctrl+shift+x",
         "when": "editorTextFocus && editorLangId == cpp"
       }
     ]
