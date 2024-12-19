@@ -5,7 +5,7 @@ import * as vscode from 'vscode';
 function removeAllComments() {
 	const editor = vscode.window.activeTextEditor;
 	if (!editor) {
-	return; // Если редактор не активен, ничего не делаем
+	return;
 	}
 	console.debug('removeAllComments');
 	const document = editor.document;
@@ -19,10 +19,8 @@ function removeAllComments() {
 	const singleLineComment = /\/\/.*$/gm;
 	const multiLineComment = /\/\*[\s\S]*?\*\//g;
 
-	// Удаляем однострочные комментарии
 	let textWithoutComments = fullText.replace(singleLineComment, '');
 
-	// Удаляем многострочные комментарии
 	textWithoutComments = textWithoutComments.replace(multiLineComment, '');
 
 	const fullRange = new vscode.Range(
